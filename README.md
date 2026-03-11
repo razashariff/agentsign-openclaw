@@ -5,6 +5,7 @@
     <a href="https://www.npmjs.com/package/agentsign-openclaw"><img src="https://img.shields.io/npm/v/agentsign-openclaw?color=blue" alt="npm"></a>
     <a href="https://github.com/razashariff/agentsign-openclaw"><img src="https://img.shields.io/github/stars/razashariff/agentsign-openclaw?style=social" alt="stars"></a>
     <a href="https://github.com/razashariff/agentsign-openclaw/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="license"></a>
+    <a href="https://colab.research.google.com/github/razashariff/agentsign-openclaw/blob/main/agentsign_openclaw_demo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
   </p>
 </p>
 
@@ -23,6 +24,12 @@ Agent Runtime (OpenClaw / NemoClaw)
     |
   MCP Tools / APIs
 ```
+
+## Try It
+
+**[Open in Google Colab](https://colab.research.google.com/github/razashariff/agentsign-openclaw/blob/main/agentsign_openclaw_demo.ipynb)** -- interactive demo with live server, no setup needed.
+
+**Live server:** `https://agentsign-api.fly.dev`
 
 ## Install
 
