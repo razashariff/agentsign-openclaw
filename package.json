@@ -1,0 +1,38 @@
+{
+  "name": "agentsign-openclaw",
+  "version": "1.0.0",
+  "description": "AgentSign trust layer for OpenClaw and NemoClaw -- cryptographic identity, signed execution chains, and trust verification for every agent tool call",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "agentsign",
+    "openclaw",
+    "nemoclaw",
+    "ai-agents",
+    "zero-trust",
+    "mcp",
+    "trust",
+    "identity",
+    "signing",
+    "middleware"
+  ],
+  "author": "CyberSecAI Ltd",
+  "homepage": "https://agentsign.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/razashariff/agentsign-openclaw"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "agentsign": ">=1.0.0"
+  }
+}
