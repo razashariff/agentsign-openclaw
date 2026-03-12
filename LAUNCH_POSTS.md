@@ -21,7 +21,7 @@ AI agents are being deployed without identity, without audit trails, and without
 
 AgentSign fixes this.
 
-Every agent gets a cryptographic passport (ECDSA P-256). Every execution is signed and chained. Every MCP tool call goes through THE GATE -- identity + trust score + pipeline stage verified before access is granted. Our 13-point scanner maps directly to 7 of the 10 OWASP Agentic risks.
+Every agent gets a cryptographic passport. Every execution is signed and chained. Every MCP tool call goes through THE GATE -- identity + trust score + pipeline stage verified before access is granted. Our 13-point scanner maps directly to 7 of the 10 OWASP Agentic risks.
 
 **What it does:**
 - 7-stage pipeline: INTAKE -> VETTING -> TESTING -> DEV -> PROD -> ACTIVE | REVOKED
@@ -57,14 +57,14 @@ The problem is real. 135K OpenClaw instances exposed to the internet. 36% of Cla
 
 AgentSign is an on-prem zero trust engine that gives every agent:
 
-1. A cryptographic passport (ECDSA P-256 signed, self-verifying, works offline)
+1. A cryptographic passport (signed, self-verifying, works offline)
 2. A 7-stage pipeline (INTAKE -> VETTING -> TESTING -> DEV -> PROD -> ACTIVE)
 3. A 13-point SDLC scanner mapped to OWASP Agentic Top 10 -- each check tagged with the ASI code it addresses
 4. A trust score (0-100, earned through verified behavior)
 5. MCP verification gate (agents must prove identity before accessing any tool server)
 6. Instant revocation (trust -> 0, all access denied)
 
-The scanner covers 7 of 10 OWASP Agentic risks out of the box. Framework-agnostic. 3 lines to integrate. Customer-owned ECDSA keys. Nothing phones home.
+The scanner covers 7 of 10 OWASP Agentic risks out of the box. Framework-agnostic. 3 lines to integrate. Customer-owned keys. Nothing phones home.
 
 We scanned 10 popular GitHub agents (GPT-Engineer 55K stars, BrowserUse 80K stars, FinRobot 6K stars). Every single one triggers multiple OWASP risk codes -- hardcoded tokens (ASI03), eval() (ASI07), no Docker isolation (ASI10), autonomous execution with no human oversight (ASI04).
 
@@ -98,7 +98,7 @@ The agent security problem is getting worse. Fast.
 
 We built AgentSign to fix this. It's an on-prem zero trust engine aligned to OWASP Agentic Top 10:
 
-- Every agent gets a cryptographic passport (ECDSA P-256)
+- Every agent gets a cryptographic passport (signed, self-verifying)
 - 7-stage pipeline with gates at each stage
 - 13-point security scanner mapped to OWASP ASI codes (catches secrets [ASI03], eval() [ASI07], prompt injection [ASI01], sandbox escapes [ASI10], framework misconfig [ASI04])
 - Trust score 0-100, earned through verified behavior
@@ -116,14 +116,14 @@ https://agentsign.dev | contact@agentsign.dev
 
 ## 4. REDDIT -- r/MachineLearning
 
-**Title:** [P] AgentSign: Cryptographic identity and trust scoring for AI agents (ECDSA P-256 passports, 13-point SDLC scanner)
+**Title:** [P] AgentSign: Cryptographic identity and trust scoring for AI agents (signed passports, 13-point SDLC scanner)
 
 **Body:**
 
 Open-source zero trust engine for AI agents. Scanner aligned to OWASP Top 10 for Agentic Applications (2026), covering 7 of 10 ASI risk categories.
 
 **Architecture:**
-- Agent passport: ECDSA P-256 + SHA-256 signed JSON, self-verifying offline
+- Agent passport: Cryptographically signed JSON, self-verifying offline
 - Pipeline: 7-stage (INTAKE -> ACTIVE) with automated gate checks
 - SDLC scanner: 13 checks mapped to OWASP ASI codes:
   - ASI01 (Goal Hijacking): prompt injection, input validation
@@ -135,7 +135,7 @@ Open-source zero trust engine for AI agents. Scanner aligned to OWASP Top 10 for
   - ASI10 (Rogue Agents): sandbox escape
 - Trust score: 5-factor weighted (code attestation, execution verification rate, success rate, history depth, pipeline stage)
 - MCP gate: Agent-to-tool-server verification (identity + trust + stage) -- addresses ASI06
-- Co-signing: Dual ECDSA signatures (local + CA) for external trust
+- Co-signing: Dual signatures (local + CA) for external trust
 
 **Key results from scanning 10 popular GitHub agents:**
 - GPT-Engineer (55K stars): ASI07 + ASI10 -- LLM-generated bash on host, no isolation
@@ -173,7 +173,7 @@ The root cause: agents have no identity. No verification. No audit trail. No kil
 We built AgentSign -- an on-prem zero trust engine for AI agents, aligned to OWASP's Top 10 for Agentic Applications (2026). Think of it as what Okta/AD does for humans, but for autonomous agents.
 
 **How it works:**
-- Every agent gets an ECDSA P-256 signed passport (self-verifying, works offline)
+- Every agent gets a cryptographically signed passport (self-verifying, works offline)
 - 7-stage pipeline with security gates (INTAKE -> VETTING -> TESTING -> DEV -> PROD -> ACTIVE)
 - 13-point SDLC scanner mapped to OWASP Agentic Top 10 (ASI01-ASI10):
   - Secret scan → ASI03 (Identity & Privilege Abuse)
@@ -188,7 +188,7 @@ We built AgentSign -- an on-prem zero trust engine for AI agents, aligned to OWA
 - MCP verification gate: every agent-to-tool request verified (identity + trust + stage)
 - Instant revocation: trust -> 0, all access denied
 
-Covers 7 of 10 OWASP Agentic risks. Customer-owned ECDSA keys. On-prem. Nothing phones home. Patent pending.
+Covers 7 of 10 OWASP Agentic risks. Customer-owned keys. On-prem. Nothing phones home. Patent pending.
 
 We scanned 10 real agents from GitHub (GPT-Engineer, BrowserUse, FinRobot, etc.). All flagged. The results are in our interactive demo:
 https://colab.research.google.com/github/razashariff/agentsign-openclaw/blob/main/agentsign_openclaw_demo.ipynb
@@ -238,7 +238,7 @@ agentsign.dev
 **Tweet 2:**
 How it works:
 
-Every agent gets a cryptographic passport (ECDSA P-256).
+Every agent gets a cryptographic passport.
 
 7-stage pipeline: INTAKE -> VETTING -> TESTING -> DEV -> PROD -> ACTIVE
 
@@ -317,7 +317,7 @@ No cryptographic proof of who the agent is. No signed record of what it did. No 
 
 We built AgentSign to address this directly -- aligned to OWASP Agentic Top 10 security best practices.
 
-AgentSign is an on-premise zero trust engine for AI agents. Every agent receives a cryptographic passport (ECDSA P-256), advances through a 7-stage security pipeline, undergoes a 13-point SDLC inspection mapped to OWASP ASI codes, and earns a trust score through verified execution history. Tool access is gated -- agents must prove identity, pipeline stage, and trust score before any MCP server grants access.
+AgentSign is an on-premise zero trust engine for AI agents. Every agent receives a cryptographic passport, advances through a 7-stage security pipeline, undergoes a 13-point SDLC inspection mapped to OWASP ASI codes, and earns a trust score through verified execution history. Tool access is gated -- agents must prove identity, pipeline stage, and trust score before any MCP server grants access.
 
 OWASP Agentic Risk Coverage:
 - ASI01 Goal Hijacking → prompt injection + input validation checks
@@ -329,7 +329,7 @@ OWASP Agentic Risk Coverage:
 - ASI10 Rogue Agents → sandbox escape checks
 
 Key design decisions:
-- Customer-owned ECDSA keys. No cloud dependency.
+- Customer-owned keys. No cloud dependency.
 - Self-verifying passports work offline.
 - Framework-agnostic: OpenClaw, NemoClaw, AutoGen, CrewAI, LangChain, Claude MCP.
 - Instant revocation: trust drops to 0, all access denied.
@@ -369,7 +369,7 @@ This isn't theoretical. In February 2026, SecurityScorecard's STRIKE team found 
 AgentSign is an on-prem zero trust engine for AI agents. It's framework-agnostic -- works with OpenClaw, NemoClaw, AutoGen, CrewAI, LangChain, Claude MCP.
 
 Every agent gets:
-- **Cryptographic passport** (ECDSA P-256 signed, self-verifying, works offline)
+- **Cryptographic passport** (signed, self-verifying, works offline)
 - **7-stage pipeline** (INTAKE -> VETTING -> TESTING -> DEV -> PROD -> ACTIVE)
 - **13-point security scan** before pipeline entry
 - **Trust score** (0-100) earned through verified execution history
@@ -460,7 +460,7 @@ For use when OpenClaw security or NemoClaw threads appear:
 
 The root issue with OpenClaw's security problems isn't the specific CVEs -- it's that there's no agent identity layer. OWASP formalized this in their 2026 Agentic Top 10: Goal Hijacking (ASI01), Tool Misuse (ASI02), Identity Abuse (ASI03), Rogue Agents (ASI10). When skills execute, there's no cryptographic proof of which agent did what. When something goes wrong, there's no instant revocation that actually works.
 
-We built AgentSign specifically for this. It's an on-prem zero trust engine: ECDSA P-256 passports, 7-stage pipeline, 13-point scanner mapped to OWASP ASI codes, trust scoring, and an MCP verification gate. Covers 7 of 10 OWASP Agentic risks. Framework-agnostic -- works with OpenClaw, NemoClaw, AutoGen, any framework.
+We built AgentSign specifically for this. It's an on-prem zero trust engine: cryptographic passports, 7-stage pipeline, 13-point scanner mapped to OWASP ASI codes, trust scoring, and an MCP verification gate. Covers 7 of 10 OWASP Agentic risks. Framework-agnostic -- works with OpenClaw, NemoClaw, AutoGen, any framework.
 
 Full interactive demo: [Colab link]
 
